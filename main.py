@@ -104,9 +104,9 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
 
         res = self.switch_operator(oper2, values[1], values[2])
         if self.lab_number == 1:
-            if oper3 == "*" or oper3 == "/":
-                res3 = self.switch_operator(oper3, res, values[3])
-                res = self.switch_operator(oper1, values[0], res3)
+            if (oper3 == "*" or oper3 == "/") and (oper1 == "+" or oper1 == "-"):
+                res4 = self.switch_operator(oper3, res, values[3])
+                res = self.switch_operator(oper1, values[0], res4)
             else:
                 res1 = self.switch_operator(oper1, values[0], res)
                 res = self.switch_operator(oper3, res1, values[3])
